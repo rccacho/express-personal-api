@@ -55,9 +55,19 @@ app.get('/api', function apiIndex(req, res) {
       {method: "GET", path: "/api/flowers", description: "Index of all flowers"},
       {method: "POST", path: "/api/flowers", description: "Add a new flower"},
       {method: "PUT", path: "/api/flowers/:id", description: "Edit and update info on an existing flower"},
-      {method: "DELETE", path: "/api/flowers/:id", description: "Delete an existing flower"},
-      {method: "GET", path: "/api/flowers", description: "E.g. Index of all flowers"}
+      {method: "DELETE", path: "/api/flowers/:id", description: "Delete an existing flower"}
     ]
+  })
+});
+
+app.get('/api/profile', function(req, res) {
+  res.json({
+    name: "Regelyn Cacho",
+    githubLink: "https://github.com/rccacho",
+    personalSiteLink: "https://rccacho.github.io/", 
+    currentCity: "Alameda",
+    favoriteColor: "red",
+    otherOccupations: ["Sunday School Teacher", "Floral Designer"]
   })
 });
 
