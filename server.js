@@ -44,7 +44,6 @@ app.get('/', function homepage(req, res) {
 
 app.get('/api', function apiIndex(req, res) {
   // TODO: Document all your api endpoints below as a simple hardcoded JSON object. 
-  // It would be seriously overkill to save any of this to your database.
   res.json({
     message: "Welcome to my personal api! Here's what you need to know!",
     documentationUrl: "https://github.com/rccacho/express_personal_api/README.md", // CHANGE ME
@@ -60,16 +59,26 @@ app.get('/api', function apiIndex(req, res) {
   })
 });
 
-app.get('/api/profile', function(req, res) {
+app.get('/api/profile', function (req, res) {
   res.json({
-    name: "Regelyn Cacho",
-    githubLink: "https://github.com/rccacho",
-    personalSiteLink: "https://rccacho.github.io/", 
-    currentCity: "Alameda",
-    favoriteColor: "red",
-    otherOccupations: ["Sunday School Teacher", "Floral Designer"]
-  })
+  name: "Regelyn Cacho",
+  githubLink: "https://github.com/rccacho",
+  personalSiteLink: "https://rccacho.github.io/", 
+  currentCity: "Alameda",
+  favoriteColor: "red",
+  otherOccupations: ["Sunday School Teacher", "Floral Designer"]
+ });
 });
+
+//get all flowers
+app.get('api/flowers', function (req, res) {
+  db.Flower.find(function(err, flowers) {
+    if (err) { return console.log("index error: " + err); }
+    res.json(flowers);
+  });
+});
+
+
 
 /**********
  * SERVER *
