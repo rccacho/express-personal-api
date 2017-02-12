@@ -3,7 +3,7 @@
 
 var db = require('./models');
 
-var flowers = [
+var flowers_list = [
   {
   name: "rose",
   popularColors: ["red", "white", "pink", "yellow", "orange"],
@@ -49,10 +49,13 @@ db.Flower.remove({}, function(err, flowers){
     console.log('removed all flowers');
 
     // create new records based on the array flowers
-    db.Flower.create(flowers, function(err, flowers){
-      if (err) { return console.log('err', err); }
-      console.log("created ", flowers.length, "flowers");
+    db.Flower.create(flowers_list, function(err, flowers){
+      if (err) { 
+      	return console.log('err', err); 
+      } else {
+      console.log("created", flowers.length, "flowers");
       process.exit();
+  	  }
     });
   }
 });
