@@ -7,7 +7,37 @@ var flowers = [
   {
   name: "rose",
   popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "http://cimages.prvd.com/is/image/ProvideCommerce/PF_15_R202_MINIMAL_VA0035_W1_SQ?$PFCProductImage$"
+  image: "Image will be here."
+  },
+  {
+  name: "rose2",
+  popularColors: ["red", "white", "pink", "yellow", "orange"],
+  image: "Image will be here."
+  },
+  {
+  name: "rose3",
+  popularColors: ["red", "white", "pink", "yellow", "orange"],
+  image: "Image will be here."
+  },
+  {
+  name: "rose4",
+  popularColors: ["red", "white", "pink", "yellow", "orange"],
+  image: "Image will be here."
+  },
+  {
+  name: "rose5",
+  popularColors: ["red", "white", "pink", "yellow", "orange"],
+  image: "Image will be here."
+  },
+  {
+  name: "rose6",
+  popularColors: ["red", "white", "pink", "yellow", "orange"],
+  image: "Image will be here."
+  },
+  {
+  name: "rose7",
+  popularColors: ["red", "white", "pink", "yellow", "orange"],
+  image: "Image will be here."
   }
 ];
 
@@ -21,7 +51,7 @@ db.Flower.remove({}, function(err, flowers){
     // create new records based on the array flowers
     db.Flower.create(flowers, function(err, flowers){
       if (err) { return console.log('err', err); }
-      console.log("created", flowers.length, "flowers");
+      console.log("created ", flowers.length, "flowers");
       process.exit();
     });
   }
