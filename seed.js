@@ -6,7 +6,7 @@ var db = require('./models');
 var flowers = [
   {
   name: "rose",
-  popularColors: ["red", "white", "pink", "yellow", "orange"]
+  popularColors: ["red", "white", "pink", "yellow", "orange"],
   image: "http://cimages.prvd.com/is/image/ProvideCommerce/PF_15_R202_MINIMAL_VA0035_W1_SQ?$PFCProductImage$"
   }
 ];
