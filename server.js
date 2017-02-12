@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -70,7 +70,7 @@ app.get('/api/profile', function (req, res) {
  });
 });
 
-//get all flowers
+//get all flowers --SOMETHING IS NOT WORKING! FLOWERS ON RENDERING ON WEBPAGE
 app.get('api/flowers', function (req, res) {
   db.Flower.find(function(err, flowers) {
     if (err) { return console.log("index error: " + err); }
@@ -78,7 +78,33 @@ app.get('api/flowers', function (req, res) {
   });
 });
 
+// get one flower
+app.get('/api/flowers/:id', function (req, res) {
+  db.Flowers.findOne({_id: req.params.id }, function(err, data) {
+    res.json(data);
+  });
+});
 
+// create new flower
+app.post('/api/flowers', function (req, res) {
+  // create new flower with form data (`req.body`)
+  console.log('flowers create', req.body);
+  var newFlower = new db.Flower(req.body);
+  newFlower.save(function handleDBFlowerSaved(err, savedFlower) {
+    res.json(savedFlower);
+  });
+});
+
+// delete flower
+app.delete('/api/flowers/:id', function (req, res) {
+  // get flower id from url params (`req.params`)
+  console.log('flowers delete', req.params);
+  var flowerId = req.params.id;
+  // find the index of the flower we want to remove
+  db.Flower.findOneAndRemove({ _id: flowerId }, function (err, deletedFlower) {
+    res.json(deletedFlower);
+  });
+});
 
 /**********
  * SERVER *
