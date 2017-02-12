@@ -3,7 +3,7 @@
 
 var db = require('./models');
 
-var new_flower = [
+var flowers = [
   {
   name: "rose",
   popularColors: ["red", "white", "pink", "yellow", "orange"]
@@ -12,16 +12,20 @@ var new_flower = [
 ];
 
 
+db.Flower.remove({}, function(err, flowers){
+  if(err) {
+    console.log('Error occurred in remove', err);
+  } else {
+    console.log('removed all flowers');
 
-db.Flower.create(new_flower, function(err, flower){
-  if (err){
-    return console.log("Error:", err);
+    // create new records based on the array flowers
+    db.Flower.create(flowers, function(err, flowers){
+      if (err) { return console.log('err', err); }
+      console.log("created", flowers.length, "flowers");
+      process.exit();
+    });
   }
-
-  console.log("Created new flower", flower._id)
-  process.exit(); // we're all done! Exit the program.
-})
-
+});
 
 
 // var new_campsite = {description: "Sharp rocks. Middle of nowhere."}
