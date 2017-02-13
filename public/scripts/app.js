@@ -16,6 +16,17 @@ $(document).ready(function(){
     error: handleError
   });
 
+  $('#searchFlowerForm').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      method: 'GET',
+      url: '/api/flowers',
+      data: $(this).serialize(),
+      success: searchFlowerSuccess,
+      error: searchFlowerError
+    });
+  });
+
   $('#newFlowerForm').on('submit', function(e) {
     e.preventDefault();
     $.ajax({
@@ -74,6 +85,25 @@ function handleSuccess(json) {
 function handleError(e) {
   console.log('uh oh');
   $('#flowerTarget').text('Failed to load flowers, is the server working?');
+}
+
+function searchFlowerSuccess(json) {
+  var flower = json;
+  console.log(json);
+  var flowerName = $('#searchFlowerForm input').val('');
+  console.log('search flower', flowerName);
+  // find the flower with the correct name 
+  for(var index = 0; index < allFlowers.length; index++) {
+    if(allFlowers[index].name === flowerName) {
+      allFlowers[index] = json;
+      break;
+    }
+  }
+  render();
+}
+
+function searchFlowerError() {
+  console.log('searchflower error!');
 }
 
 function newFlowerSuccess(json) {

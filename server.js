@@ -79,8 +79,8 @@ app.get('/api/flowers', function (req, res) {
 
 
 // get one flower
-app.get('/api/flowers/:id', function (req, res) {
-  db.Flower.findOne({_id: req.params.id }, function(err, data) {
+app.get('/api/flowers/:name', function (req, res) {
+  db.Flower.findOne({name: req.params.name }, function(err, data) {
     res.json(data);
   });
 });
