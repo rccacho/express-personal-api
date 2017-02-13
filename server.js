@@ -70,7 +70,7 @@ app.get('/api/profile', function (req, res) {
  });
 });
 
-//get all flowers --SOMETHING IS NOT WORKING! FLOWERS NOT RENDERING ON WEBPAGE
+//get all flowers 
 app.get('/api/flowers', function (req, res) {
   db.Flower.find(function(err, flowers) {
     if (err) { return console.log("index error: " + err); }
@@ -105,6 +105,19 @@ app.delete('/api/flowers/:id', function (req, res) {
   db.Flower.findOneAndRemove({ _id: flowerId }, function (err, deletedFlower) {
     res.json(deletedFlower);
   });
+});
+
+//update flower
+app.put("/api/flowers/:_id", function (req, res){
+  var _id = req.params._id;
+  var flowerData = req.body; 
+
+  db.Flower.findOneAndUpdate(
+    {_id: _id}, flowerData, {new: true}, function(err, updatedFlower){
+      //TODO: error handling
+      res.json(updatedFlower);
+    }
+  );
 });
 
 /**********
