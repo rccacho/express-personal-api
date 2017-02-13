@@ -7,37 +7,37 @@ var flowers_list = [
   {
   name: "rose",
   popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "Image will be here."
+  image: "http://www.shunvmall.com/data/out/198/47785450-rose-image.jpg"
   },
   {
-  name: "rose2",
-  popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "Image will be here."
+  name: "tulip",
+  popularColors: ["red", "pink", "yellow", "purple"],
+  image: "https://maxpull-gdvuch3veo.netdna-ssl.com/wp-content/uploads/2008/07/tulips-in-bloom.jpg"
   },
   {
-  name: "rose3",
-  popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "Image will be here."
+  name: "pom",
+  popularColors: ["red", "white", "light-green", "yellow"],
+  image: "https://www.fiftyflowers.com/site_files/FiftyFlowers/Image/Product/Button-Fall-Assorted-Mix-Close-500_2888393b.jpg"
   },
   {
-  name: "rose4",
-  popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "Image will be here."
+  name: "gladiolus",
+  popularColors: ["red", "white", "pink", "yellow"],
+  image: "http://demandware.edgesuite.net/sits_pod38/dw/image/v2/ABAQ_PRD/on/demandware.static/-/Sites-masterCatalog_Burpee/default/dwe18ec490/Images/Product%20Images/prod002852/prod002852.jpg?sw=265&sh=312&sm=fit"
   },
   {
-  name: "rose5",
-  popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "Image will be here."
+  name: "ranunculus",
+  popularColors: ["red", "pink", "yellow", "orange"],
+  image: "https://www.longfield-gardens.com/_ccLib/image/articles/ADDI4-82.jpg"
   },
   {
-  name: "rose6",
-  popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "Image will be here."
+  name: "calla lily",
+  popularColors: ["white", "purple"],
+  image: "https://s-media-cache-ak0.pinimg.com/736x/42/14/1b/42141b26241b28a6476caca345fdd4c4.jpg"
   },
   {
-  name: "rose7",
-  popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "Image will be here."
+  name: "hydrangea",
+  popularColors: ["white", "pink", "light-blue", "purple"],
+  image: "http://myfsn-ar.flowershopnetwork.com/images/flowerdatabase/mixed-hydrangea-bouquet.365.jpg"
   }
 ];
 
@@ -60,14 +60,3 @@ db.Flower.remove({}, function(err, flowers){
   }
 });
 
-
-// var new_campsite = {description: "Sharp rocks. Middle of nowhere."}
-
-// db.Campsite.create(new_campsite, function(err, campsite){
-//   if (err){
-//     return console.log("Error:", err);
-//   }
-
-//   console.log("Created new campsite", campsite._id)
-//   process.exit(); // we're all done! Exit the program.
-// })
