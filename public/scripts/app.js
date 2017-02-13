@@ -2,7 +2,6 @@ console.log("Sanity Check: JS is working!");
 
 $(document).ready(function(){
 
-// your code
 var $flowersList;
 var allFlowers = [];
 
@@ -56,7 +55,6 @@ function getAllFlowersHtml(flowers) {
 }
 
 // helper function to render all posts to view
-// note: we empty and re-render the collection each time our post data changes
 function render () {
   // empty existing posts from view
   $flowersList.empty();
@@ -97,7 +95,7 @@ function deleteFlowerSuccess(json) {
   for(var index = 0; index < allFlowers.length; index++) {
     if(allFlowers[index]._id === flowerId) {
       allFlowers.splice(index, 1);
-      break;  // we found our flower - no reason to keep searching (this is why we didn't use forEach)
+      break;
     }
   }
   render();
