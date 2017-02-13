@@ -48,7 +48,7 @@ db.Flower.remove({}, function(err, flowers){
   } else {
     console.log('removed all flowers');
 
-    // create new records based on the array flowers
+    // create new records based on the array flowers_list
     db.Flower.create(flowers_list, function(err, flowers){
       if (err) { 
       	return console.log('err', err); 

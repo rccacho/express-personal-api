@@ -70,13 +70,14 @@ app.get('/api/profile', function (req, res) {
  });
 });
 
-//get all flowers --SOMETHING IS NOT WORKING! FLOWERS ON RENDERING ON WEBPAGE
-app.get('api/flowers', function (req, res) {
+//get all flowers --SOMETHING IS NOT WORKING! FLOWERS NOT RENDERING ON WEBPAGE
+app.get('/api/flowers', function (req, res) {
   db.Flower.find(function(err, flowers) {
     if (err) { return console.log("index error: " + err); }
     res.json(flowers);
   });
 });
+
 
 // get one flower
 app.get('/api/flowers/:id', function (req, res) {
