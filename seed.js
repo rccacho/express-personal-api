@@ -7,7 +7,7 @@ var flowers_list = [
   {
   name: "rose",
   popularColors: ["red", "white", "pink", "yellow", "orange"],
-  image: "http://www.shunvmall.com/data/out/198/47785450-rose-image.jpg"
+  image: "https://www.ftdimg.com/pics/products/SMRB_200x225.jpg"
   },
   {
   name: "tulip",
