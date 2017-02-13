@@ -81,7 +81,7 @@ app.get('/api/flowers', function (req, res) {
 
 // get one flower
 app.get('/api/flowers/:id', function (req, res) {
-  db.Flowers.findOne({_id: req.params.id }, function(err, data) {
+  db.Flower.findOne({_id: req.params.id }, function(err, data) {
     res.json(data);
   });
 });
