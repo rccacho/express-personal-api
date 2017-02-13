@@ -44,7 +44,7 @@ $(document).ready(function(){
 function getFlowerHtml(flower) {
   return `<hr>
           <p>
-          	<b>${flower.image}</b>
+          	<img src="${flower.image}"></img>
             <b>${flower.name}:</b>
             <b>${flower.popularColors}</b>
             <button type="button" name="button" class="deleteBtn btn btn-danger pull-right" data-id=${flower._id}>Delete</button>
