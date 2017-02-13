@@ -43,14 +43,13 @@ app.get('/', function homepage(req, res) {
  */
 
 app.get('/api', function apiIndex(req, res) {
-  // TODO: Document all your api endpoints below as a simple hardcoded JSON object. 
   res.json({
     message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/rccacho/express_personal_api/README.md", // CHANGE ME
-    baseUrl: "https://warm-everglades-47438.herokuapp.com", // CHANGE ME
+    documentationUrl: "https://github.com/rccacho/express_personal_api/README.md", 
+    baseUrl: "https://warm-everglades-47438.herokuapp.com", 
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
+      {method: "GET", path: "/api/profile", description: "Data about me"},
       {method: "GET", path: "/api/flowers", description: "Index of all flowers"},
       {method: "POST", path: "/api/flowers", description: "Add a new flower"},
       {method: "PUT", path: "/api/flowers/:id", description: "Edit and update info on an existing flower"},
@@ -114,7 +113,6 @@ app.put("/api/flowers/:_id", function (req, res){
 
   db.Flower.findOneAndUpdate(
     {_id: _id}, flowerData, {new: true}, function(err, updatedFlower){
-      //TODO: error handling
       res.json(updatedFlower);
     }
   );
